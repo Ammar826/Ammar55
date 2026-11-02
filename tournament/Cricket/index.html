@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Manager Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>🏏 CRICKET MANAGER PRO</h1>
+    <p>Tournament Management System</p>
+</header>
+
+<nav>
+    <button onclick="showPage('dashboard')">Dashboard</button>
+    <button onclick="showPage('teams')">Teams</button>
+    <button onclick="showPage('auction')">Auction</button>
+    <button onclick="showPage('matches')">Matches</button>
+    <button onclick="showPage('scoring')">Scoring</button>
+    <button onclick="showPage('points')">Points Table</button>
+</nav>
+
+<main>
+
+<section id="dashboard" class="page active">
+    <h2>Dashboard</h2>
+    <div class="stats">
+        <div class="stat"><h3 id="teamCount">0</h3>Teams</div>
+        <div class="stat"><h3 id="playerCount">0</h3>Players</div>
+        <div class="stat"><h3 id="matchCount">0</h3>Matches</div>
+        <div class="stat"><h3 id="soldCount">0</h3>Sold Players</div>
+    </div>
+</section>
+
+<section id="teams" class="page">
+    <h2>Team Management</h2>
+    <div class="panel">
+        <input id="teamName" placeholder="Team Name">
+        <input id="captainName" placeholder="Captain Name">
+        <input id="teamBudget" type="number" placeholder="Team Budget">
+        <button class="primary" onclick="addTeam()">Add Team</button>
+    </div>
+    <div id="teamList" class="cards"></div>
+</section>
+
+<section id="auction" class="page">
+    <h2>Live Player Auction</h2>
+
+    <div class="panel">
+        <h3>Add Player</h3>
+        <input id="playerName" placeholder="Player Name">
+
+        <select id="playerRole">
+            <option>Batsman</option>
+            <option>Bowler</option>
+            <option>All-rounder</option>
+            <option>Wicketkeeper</option>
+        </select>
+
+        <input id="basePrice" type="number" placeholder="Base Price">
+        <button class="primary" onclick="addAuctionPlayer()">Add Player</button>
+    </div>
+
+    <div class="panel">
+        <h3>Select Player</h3>
+        <select id="auctionPlayer" onchange="loadAuctionPlayer()">
+            <option value="">Select Player</option>
+        </select>
+        <div id="auctionDisplay"></div>
+    </div>
+
+    <div class="panel">
+        <h3>Player Management</h3>
+        <div id="playerList" class="cards"></div>
+    </div>
+
+    <div class="panel">
+        <h3>Team Budgets</h3>
+        <div id="auctionTeams" class="cards"></div>
+    </div>
+
+    <div class="panel">
+        <h3>Auction History</h3>
+        <div id="auctionHistory"></div>
+    </div>
+</section>
+
+<section id="matches" class="page">
+    <h2>Match Management</h2>
+    <div class="panel">
+        <select id="matchTeamA"></select>
+        <select id="matchTeamB"></select>
+
+        <select id="matchFormat">
+            <option>T10</option>
+            <option>T20</option>
+            <option>ODI</option>
+        </select>
+
+        <input id="matchDate" type="date">
+        <input id="matchVenue" placeholder="Match Venue">
+        <button class="primary" onclick="createMatch()">Create Match</button>
+    </div>
+    <div id="matchList" class="cards"></div>
+</section>
+
+<section id="scoring" class="page">
+    <h2>Live Scoring</h2>
+    <div class="panel">
+        <select id="scoreMatch" onchange="loadScoreMatch()">
+            <option value="">Select Match</option>
+        </select>
+        <div id="scoreArea"></div>
+    </div>
+</section>
+
+<section id="points" class="page">
+    <h2>Points Table</h2>
+    <div class="panel table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Team</th>
+                    <th>Played</th>
+                    <th>Won</th>
+                    <th>Lost</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody id="pointsBody"></tbody>
+        </table>
+    </div>
+</section>
+
+</main>
+
+<footer>Cricket Manager Pro</footer>
+
+<!-- JavaScript sirf ek baar load karna hai -->
+<script src="./script.js"></script>
+
+</body>
+</html>
