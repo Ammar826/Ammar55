@@ -1,0 +1,167 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+header {
+    background: #172554;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+header h1 {
+    margin-bottom: 8px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 25px auto;
+}
+
+.section {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px #00000010;
+}
+
+.section h2 {
+    margin-bottom: 15px;
+    color: #172554;
+}
+
+input {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 15px;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+.product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 10px 0;
+    gap: 5px;
+}
+
+.product span {
+    font-weight: bold;
+}
+
+.product button {
+    font-size: 12px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.cart-item button {
+    padding: 6px 12px;
+}
+
+.hint {
+    color: #64748b;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.discount-area {
+    margin-top: 15px;
+}
+
+.total {
+    color: #15803d;
+    margin-top: 15px;
+}
+
+.print-btn {
+    background: #15803d;
+}
+
+.print-btn:hover {
+    background: #166534;
+}
+
+.clear-btn {
+    background: #dc2626;
+}
+
+.clear-btn:hover {
+    background: #b91c1c;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #172554;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+    }
+
+    .product,
+    .cart-item {
+        justify-content: flex-start;
+    }
+}
+
+@media print {
+    header,
+    footer,
+    .container > .section:nth-child(1),
+    .container > .section:nth-child(2),
+    .container > .section:nth-child(3),
+    .print-btn,
+    .clear-btn,
+    .discount-area {
+        display: none;
+    }
+
+    body {
+        background: white;
+    }
+
+    .section {
+        box-shadow: none;
+    }
+}

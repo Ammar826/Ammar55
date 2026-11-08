@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My POS System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>MY STORE POS</h1>
+        <p>Point of Sale System</p>
+    </header>
+
+    <main class="container">
+
+        <!-- Available Products -->
+        <section class="section">
+            <h2>Available Products</h2>
+            <div id="productList"></div>
+        </section>
+
+        <!-- Add New Product -->
+        <section class="section">
+            <h2>Add New Product</h2>
+
+            <input type="text" id="newName" placeholder="Product Name">
+
+            <input type="number" id="newPrice" placeholder="Product Price">
+
+            <input type="text" id="newBarcode" placeholder="Product Barcode">
+
+            <button onclick="addProduct()">Save Product</button>
+        </section>
+
+        <!-- Checkout -->
+        <section class="section">
+            <h2>Checkout</h2>
+
+            <input
+                type="text"
+                id="barcodeInput"
+                placeholder="Enter Barcode"
+            >
+
+            <p class="hint">Barcode enter karke Enter press karein.</p>
+        </section>
+
+        <!-- Cart -->
+        <section class="section">
+            <h2>Shopping Cart</h2>
+
+            <div id="cart">
+                No products added yet.
+            </div>
+
+            <h3>Subtotal: Rs. <span id="subtotal">0</span></h3>
+
+            <div class="discount-area">
+                <input
+                    type="number"
+                    id="discountInput"
+                    placeholder="Discount %"
+                    min="0"
+                    max="100"
+                >
+
+                <button onclick="applyDiscount()">Apply Discount</button>
+            </div>
+
+            <p>Discount: Rs. <span id="discountAmount">0</span></p>
+
+            <h2 class="total">
+                Total: Rs. <span id="total">0</span>
+            </h2>
+        </section>
+
+        <!-- Payment -->
+        <section class="section">
+            <h2>Payment</h2>
+
+            <input
+                type="number"
+                id="cash"
+                placeholder="Cash Received"
+            >
+
+            <h3>Change: Rs. <span id="change">0</span></h3>
+
+            <button onclick="printBill()" class="print-btn">
+                Print Bill
+            </button>
+
+            <button onclick="clearCart()" class="clear-btn">
+                New Customer
+            </button>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>MY STORE POS | Practice Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+ 
+
+
+
