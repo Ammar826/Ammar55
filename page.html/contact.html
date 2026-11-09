@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyHub - Contact / About</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">📘 StudyHub</div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    <nav id="navMenu">
+      <ul>
+        <li><a href="../index.html" target="_blank">Home</a></li>
+        <li><a href="../page.html/resourses.html" target="_blank">Resources</a></li>
+        <li><a href="../page.html/contact.html" target="_blank">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>About StudyHub</h1>
+    <p>StudyHub was created to help students find reliable study tips and resources in one simple place. Our goal is to make studying less stressful and more organized for everyone.</p>
+
+    <h2>Contact Us</h2>
+    <p>Have a question, suggestion, or feedback? Fill out the form below.</p>
+
+    <form id="contactForm" novalidate>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name">
+      <span class="error" id="nameError"></span>
+
+      <label for="email">Email</label>
+      <input type="text" id="email" name="email" placeholder="Your email">
+      <span class="error" id="emailError"></span>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Your message"></textarea>
+      <span class="error" id="messageError"></span>
+
+      <button type="submit">Send Message</button>
+      <p id="formSuccess" class="hidden-message">✅ Thank you! Your message has been received.</p>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 StudyHub. Made for students, by students.</p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
